@@ -27,7 +27,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.1]"
+            className="text-6xl md:text-8xl font-display text-slate-900 mb-6 leading-none"
           >
             Level Up Your <br />
             <span className="text-brand-600">Dad Game.</span>
