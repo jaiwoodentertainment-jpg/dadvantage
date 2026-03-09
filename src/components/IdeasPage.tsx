@@ -231,7 +231,7 @@ export default function IdeasPage({ isFavorited, toggleFavorite }: Props) {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2 text-brand-600 font-bold">
                   <Sparkles size={20} />
-                  <span>AI Idea: {selectedCategory}</span>
+                  <span>Fathom AI: {selectedCategory}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   {!loading && aiIdea && (

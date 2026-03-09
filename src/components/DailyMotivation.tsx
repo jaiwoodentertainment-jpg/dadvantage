@@ -4,7 +4,7 @@ import { Quote, RefreshCw, CalendarDays, Heart } from 'lucide-react';
 import { getDailyMotivation } from '../services/claude';
 import { type Favorite } from '../hooks/useFavorites';
 
-const CACHE_KEY = 'dadvantage_daily_quote';
+const CACHE_KEY = 'fathom_daily_quote';
 
 function getTodayKey() {
   return new Date().toISOString().slice(0, 10);

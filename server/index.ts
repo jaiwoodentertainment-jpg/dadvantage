@@ -39,7 +39,7 @@ if (postCount === 0) {
   const insert = db.prepare(
     'INSERT INTO posts (author, category, title, content, likes) VALUES (?, ?, ?, ?, ?)'
   );
-  insert.run('DadOfThree', 'General', 'Welcome to the DadVantage Community!',
+  insert.run('DadOfThree', 'General', 'Welcome to Fathom!',
     `Hey everyone! 👋 This is the place for dads at every stage of the journey — newborns, toddlers, teens, you name it.\n\nShare your wins, your struggles, your hacks, and your questions. No judgement here. We're all figuring it out together.\n\nDrop a comment and introduce yourself — how many kids do you have and what's your biggest challenge right now?`, 24);
   insert.run('FirstTimeDad_Mike', 'Newborn & Baby', 'Swaddle technique that actually works — game changer',
     `My wife and I were struggling for weeks until a nurse showed us the "burrito wrap" method. Fold one corner down, place baby with shoulders at that fold, wrap one side tight, tuck the bottom up, then wrap the other side.\n\nKey thing nobody told us: it needs to be TIGHT. We were too gentle. Once we went firmer (safely), our son slept 3 extra hours. Sharing in case it helps anyone else!`, 18);
@@ -159,4 +159,4 @@ app.post('/api/idea', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`DadVantage API running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Fathom API running on http://localhost:${PORT}`));

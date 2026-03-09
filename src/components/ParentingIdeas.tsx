@@ -73,7 +73,7 @@ export default function ParentingIdeas({ isFavorited, toggleFavorite }: Props) {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2 text-brand-600 font-bold">
                   <Sparkles size={20} />
-                  <span>DadVantage AI: {selectedCategory}</span>
+                  <span>Fathom AI: {selectedCategory}</span>
                 </div>
                 {!loading && aiTip && (
                   <button

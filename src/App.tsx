@@ -28,8 +28,8 @@ export default function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <button onClick={() => navigate('home')} className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl">D</div>
-            <span className="font-display font-bold text-xl tracking-tight text-slate-900">DadVantage</span>
+            <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl">F</div>
+            <span className="font-display font-bold text-xl tracking-tight text-slate-900">Fathom</span>
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
             <button
@@ -121,7 +121,7 @@ export default function App() {
 
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to lead your family?</h2>
                 <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-                  Join thousands of fathers receiving weekly wisdom and practical parenting hacks directly to their inbox.
+                  Join thousands of fathers on Fathom — weekly wisdom and practical parenting insights delivered straight to your inbox.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <input
@@ -152,8 +152,8 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
             <div className="col-span-2 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl">D</div>
-                <span className="font-display font-bold text-xl tracking-tight text-slate-900">DadVantage</span>
+                <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl">F</div>
+                <span className="font-display font-bold text-xl tracking-tight text-slate-900">Fathom</span>
               </div>
               <p className="text-slate-500 max-w-sm leading-relaxed">
                 Empowering fathers to lead with love, patience, and purpose. Because being a dad is the most important job you'll ever have.
@@ -184,7 +184,7 @@ export default function App() {
             </div>
           </div>
           <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-slate-400 text-sm">© 2024 DadVantage. All rights reserved.</p>
+            <p className="text-slate-400 text-sm">© 2025 Fathom. All rights reserved.</p>
             <div className="flex items-center gap-1 text-slate-400 text-sm">
               Made with <Heart size={14} className="text-rose-500 fill-rose-500" /> for dads everywhere
             </div>

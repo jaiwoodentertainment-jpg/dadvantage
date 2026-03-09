@@ -9,7 +9,7 @@ export type Favorite = {
   savedAt: string;
 };
 
-const STORAGE_KEY = 'dadvantage_favorites';
+const STORAGE_KEY = 'fathom_favorites';
 
 function load(): Favorite[] {
   try {

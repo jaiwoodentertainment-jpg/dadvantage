@@ -29,8 +29,8 @@ export default function Hero() {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl font-display text-slate-900 mb-6 leading-none"
           >
-            Level Up Your <br />
-            <span className="text-brand-600">Dad Game.</span>
+            Understand <br />
+            <span className="text-brand-600">The Journey.</span>
           </motion.h1>
 
           <motion.p 

@@ -118,7 +118,7 @@ function NewPostModal({ onClose, onSubmit }: { onClose: () => void; onSubmit: (p
           {error && <p className="text-rose-500 text-sm">{error}</p>}
           <button type="submit" disabled={loading}
             className="w-full py-3 bg-brand-600 text-white rounded-xl font-bold hover:bg-brand-700 transition-colors disabled:opacity-60">
-            {loading ? 'Posting...' : 'Post to Fatherhood'}
+            {loading ? 'Posting...' : 'Post to Fathom'}
           </button>
         </form>
       </motion.div>
