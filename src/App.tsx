@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import Hero from './components/Hero';
-import DailyMotivation from './components/DailyMotivation';
-import ParentingIdeas from './components/ParentingIdeas';
 import IdeasPage from './components/IdeasPage';
 import CommunityPage from './components/CommunityPage';
+import MotivationPage from './components/MotivationPage';
 import FavoritesDrawer from './components/FavoritesDrawer';
 import { useFavorites } from './hooks/useFavorites';
 import { Heart, Github, Twitter, Mail, Menu, X, Bookmark } from 'lucide-react';
 
-type Page = 'home' | 'ideas' | 'community';
+type Page = 'home' | 'motivation' | 'ideas' | 'community';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,8 +32,8 @@ export default function App() {
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
             <button
-              onClick={() => navigate('home')}
-              className={`hover:text-brand-600 transition-colors ${page === 'home' ? 'text-brand-600' : ''}`}
+              onClick={() => navigate('motivation')}
+              className={`hover:text-brand-600 transition-colors ${page === 'motivation' ? 'text-brand-600' : ''}`}
             >
               Motivation
             </button>
@@ -76,8 +75,8 @@ export default function App() {
         {menuOpen && (
           <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 flex flex-col gap-4 text-sm font-semibold text-slate-600">
             <button
-              onClick={() => navigate('home')}
-              className={`text-left hover:text-brand-600 transition-colors py-2 ${page === 'home' ? 'text-brand-600' : ''}`}
+              onClick={() => navigate('motivation')}
+              className={`text-left hover:text-brand-600 transition-colors py-2 ${page === 'motivation' ? 'text-brand-600' : ''}`}
             >
               Motivation
             </button>
@@ -105,11 +104,11 @@ export default function App() {
           <CommunityPage />
         ) : page === 'ideas' ? (
           <IdeasPage isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
+        ) : page === 'motivation' ? (
+          <MotivationPage isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
         ) : (
           <>
             <Hero />
-            <DailyMotivation isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
-            <ParentingIdeas isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
 
             {/* Call to Action Section */}
             <section className="py-20 px-4">
@@ -162,7 +161,7 @@ export default function App() {
             <div>
               <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Resources</h4>
               <ul className="space-y-4 text-slate-600 text-sm">
-                <li><button onClick={() => navigate('home')} className="hover:text-brand-600 transition-colors">Daily Motivation</button></li>
+                <li><button onClick={() => navigate('motivation')} className="hover:text-brand-600 transition-colors">Daily Motivation</button></li>
                 <li><button onClick={() => navigate('ideas')} className="hover:text-brand-600 transition-colors">Weekend Ideas</button></li>
                 <li><button onClick={() => navigate('community')} className="hover:text-brand-600 transition-colors">Fatherhood Forum</button></li>
                 <li><a href="#" className="hover:text-brand-600 transition-colors">Mental Health</a></li>
