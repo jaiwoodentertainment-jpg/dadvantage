@@ -11,3 +11,4 @@ coverage/
 .cache/
 *.sqlite
 *.db
+community.db

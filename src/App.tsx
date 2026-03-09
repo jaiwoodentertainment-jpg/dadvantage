@@ -3,11 +3,12 @@ import Hero from './components/Hero';
 import DailyMotivation from './components/DailyMotivation';
 import ParentingIdeas from './components/ParentingIdeas';
 import IdeasPage from './components/IdeasPage';
+import CommunityPage from './components/CommunityPage';
 import FavoritesDrawer from './components/FavoritesDrawer';
 import { useFavorites } from './hooks/useFavorites';
 import { Heart, Github, Twitter, Mail, Menu, X, Bookmark } from 'lucide-react';
 
-type Page = 'home' | 'ideas';
+type Page = 'home' | 'ideas' | 'community';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +44,12 @@ export default function App() {
             >
               Ideas
             </button>
-            <a href="#" className="hover:text-brand-600 transition-colors">Community</a>
+            <button
+              onClick={() => navigate('community')}
+              className={`hover:text-brand-600 transition-colors ${page === 'community' ? 'text-brand-600' : ''}`}
+            >
+              Fatherhood
+            </button>
             <button className="px-4 py-2 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors">
               Join Free
             </button>
@@ -81,7 +87,12 @@ export default function App() {
             >
               Ideas
             </button>
-            <a href="#" className="hover:text-brand-600 transition-colors py-2">Community</a>
+            <button
+              onClick={() => navigate('community')}
+              className={`text-left hover:text-brand-600 transition-colors py-2 ${page === 'community' ? 'text-brand-600' : ''}`}
+            >
+              Fatherhood
+            </button>
             <button className="px-4 py-3 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-center">
               Join Free
             </button>
@@ -90,7 +101,9 @@ export default function App() {
       </nav>
 
       <main className="flex-grow">
-        {page === 'ideas' ? (
+        {page === 'community' ? (
+          <CommunityPage />
+        ) : page === 'ideas' ? (
           <IdeasPage isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
         ) : (
           <>
@@ -151,7 +164,7 @@ export default function App() {
               <ul className="space-y-4 text-slate-600 text-sm">
                 <li><button onClick={() => navigate('home')} className="hover:text-brand-600 transition-colors">Daily Motivation</button></li>
                 <li><button onClick={() => navigate('ideas')} className="hover:text-brand-600 transition-colors">Weekend Ideas</button></li>
-                <li><a href="#" className="hover:text-brand-600 transition-colors">Dad Hacks</a></li>
+                <li><button onClick={() => navigate('community')} className="hover:text-brand-600 transition-colors">Fatherhood Forum</button></li>
                 <li><a href="#" className="hover:text-brand-600 transition-colors">Mental Health</a></li>
               </ul>
             </div>
