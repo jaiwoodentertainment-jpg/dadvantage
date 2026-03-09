@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from './components/Hero';
 import DailyMotivation from './components/DailyMotivation';
 import ParentingIdeas from './components/ParentingIdeas';
-import { Heart, Github, Twitter, Mail } from 'lucide-react';
+import { Heart, Github, Twitter, Mail, Menu, X } from 'lucide-react';
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
@@ -22,7 +24,21 @@ export default function App() {
               Join Free
             </button>
           </div>
+          <button className="md:hidden p-2 text-slate-600" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-slate-100 px-4 py-4 flex flex-col gap-4 text-sm font-semibold text-slate-600">
+            <a href="#" className="hover:text-brand-600 transition-colors py-2" onClick={() => setMenuOpen(false)}>Motivation</a>
+            <a href="#" className="hover:text-brand-600 transition-colors py-2" onClick={() => setMenuOpen(false)}>Ideas</a>
+            <a href="#" className="hover:text-brand-600 transition-colors py-2" onClick={() => setMenuOpen(false)}>Community</a>
+            <button className="px-4 py-3 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-center">
+              Join Free
+            </button>
+          </div>
+        )}
       </nav>
 
       <main className="flex-grow">
@@ -43,10 +59,10 @@ export default function App() {
               Join thousands of fathers receiving weekly wisdom and practical parenting hacks directly to their inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 min-w-[300px]"
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="px-6 py-4 bg-white/10 border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-500 w-full sm:min-w-[300px] sm:w-auto"
               />
               <button className="px-8 py-4 bg-brand-500 text-white rounded-2xl font-bold hover:bg-brand-600 transition-all">
                 Subscribe Now
@@ -59,8 +75,8 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-slate-50 border-t border-slate-200 py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-1 md:col-span-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+            <div className="col-span-2 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-black text-xl">D</div>
                 <span className="font-display font-bold text-xl tracking-tight text-slate-900">DadVantage</span>
